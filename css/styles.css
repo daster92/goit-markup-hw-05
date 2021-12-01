@@ -81,10 +81,12 @@ img {
   font-size: 14px;
   line-height: 1.14;
   text-decoration: none;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .site-nav .link:hover,
 .site-nav .link:focus {
   color: var(--accent-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .site-nav .link.current::after {
   content: "";
@@ -119,6 +121,7 @@ img {
   font-size: 14px;
   line-height: 1.2;
   text-decoration: none;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .auth-nav .icon {
   fill: currentColor;
@@ -127,6 +130,7 @@ img {
 .auth-nav .link:hover,
 .auth-nav .link:focus {
   color: var(--accent-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .auth-nav .link.current {
   color: var(--accent-color);
@@ -175,20 +179,28 @@ img {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.2);
   z-index: 1;
+  opacity: 1;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .backdrop.is-hidden {
-  visibility: hidden;
   opacity: 0;
   pointer-events: none;
+}
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0.2);
 }
 .modal {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  min-width: 528px;
-  min-height: 581px;
+  width: 528px;
+  height: 581px;
   background-color: var(--primary-bg-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 /* Section */
 .section-block {
@@ -331,6 +343,8 @@ img {
   justify-content: center;
   background-color: #ffffff;
   color: #afb1b8;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .team-social-icon {
   fill: currentColor;
@@ -339,6 +353,8 @@ img {
 .team-social-link:focus {
   background-color: var(--accent-color);
   color: #ffffff;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 /* Clients */
 .section-clients {
@@ -361,6 +377,8 @@ img {
   border: 1px solid #afb1b8;
   border-radius: 4px;
   color: #afb1b8;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .section-clients-icon {
   fill: currentColor;
@@ -370,6 +388,8 @@ img {
   background-color: #ffffff;
   color: var(--accent-color);
   border: 1px solid var(--accent-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Button */
@@ -382,6 +402,7 @@ img {
   text-align: center;
   font-family: inherit;
   border: 1px solid transparent;
+  cursor: pointer;
 }
 .button.ptimary {
   background-color: var(--accent-color);
@@ -391,6 +412,27 @@ img {
   font-size: 16px;
   line-height: 1.8;
 }
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  background-color: var(--primary-bg-color);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.modal-close:hover {
+  border: 1px solid var(--accent-color);
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* .button.ptimary:hover {
+  background-color: rgba(33, 150, 243, 2);
+} */
 .sections-button .item:not(:last-child) {
   margin-right: 8px;
 }
@@ -409,10 +451,12 @@ img {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.63;
-
+  cursor: pointer;
   font-family: inherit;
   text-align: center;
   border: 1px solid transparent;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .button-link:hover,
 .button-link:focus {
@@ -420,6 +464,8 @@ img {
   background-color: var(--accent-color);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .button-link.current {
   background-color: var(--accent-color);
@@ -435,10 +481,14 @@ img {
   font-style: normal;
   font-size: 14px;
   line-height: 1.71;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .addres-list:hover,
 .addres-list:focus {
   color: var(--accent-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .contacts-list .item {
   margin-top: 9px;
@@ -450,10 +500,14 @@ img {
   font-size: 14px;
   line-height: 1.71;
   text-decoration: none;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .contacts-list .link:hover,
 .contacts-list .link:focus {
   color: var(--accent-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 /* Перечень услуг */
 .portfolio-cards {
@@ -563,6 +617,8 @@ img {
   justify-content: center;
   background-color: rgba(255, 255, 255, 0.1);
   color: #ffffff;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .second-social-icon {
   fill: currentColor;
@@ -571,4 +627,6 @@ img {
 .second-social-link:focus {
   background-color: var(--accent-color);
   color: #ffffff;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
